@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Keyword Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
+
+        <div id="drop-area">
+            <h2>Upload Your Resume</h2>
+            <p>Drag and drop your resume here or click to select</p>
+            <inputtype="file" id="resume-upload" accept=".pdf,.doc,.docx,.txt" />
+        </div>
+
+        <div id="job-description-area">
+            <h2>Enter Job Keywords</h2>
+            <textarea 
+                id="job-description" 
+                placeholder="Enter keywords separated by commas (e.g., React, JavaScript, Node.js)"
+            ></textarea>
+        </div>
+
+        <button id="analyze-resume">Analyze Resume</button>
+
+        <div id="progress-bar-container" class="hidden">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="feedback-summary" class="hidden"></div>
+
+        <div id="analysis-results" class="hidden">
+            <h2>Matched Keywords</h2>
+            <ul id="results-list"></ul>
+        </div>
+
+        <div id="suggestions" class="hidden">
+            <h2>Missing Keywords</h2>
+            <ul id="suggestions-list"></ul>
+        </div>
+
+        <button id="export-feedback" class="hidden">Export Analysis</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

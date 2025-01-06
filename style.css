@@ -1,0 +1,279 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #edf2f7;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4299e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3182ce;
+}
+
+/* Container */
+#app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Headers */
+h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Upload Area */
+#drop-area {
+    border: 2.5px dashed #4299e1;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+    background: #ebf8ff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#drop-area:hover {
+    transform: scale(1.02);
+    background: #e6f6ff;
+}
+
+#drop-area.drag-over {
+    border-color: #48bb78;
+    background-color: #f0fff4;
+    transform: scale(1.03);
+}
+
+#drop-area h2 {
+    color: #2b6cb0;
+}
+
+#drop-area p {
+    color: #4a5568;
+}
+
+/* Textarea */
+#job-description {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#job-description:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 6px rgba(66, 153, 225, 0.5);
+}
+
+/* Buttons */
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #4299e1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #3182ce;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+#analyze-resume {
+    background-color: #48bb78;
+}
+
+#analyze-resume:hover {
+    background-color: #38a169;
+}
+
+#export-feedback {
+    background-color: #805ad5;
+}
+
+#export-feedback:hover {
+    background-color: #6b46c1;
+}
+
+/* Progress Bar */
+#progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #edf2f7;
+    border-radius: 6px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #48bb78;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Results Areas */
+#feedback-summary {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem;
+    background: #f0fff4;
+    border-radius: 8px;
+    text-align: center;
+    color: #2f855a;
+}
+
+#analysis-results,
+#suggestions {
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+li {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+    background: #f0f4f8;
+    transform: translateX(5px);
+}
+
+#results-list li::before {
+    content: "✓";
+    color: #48bb78;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#suggestions-list li::before {
+    content: "+";
+    color: #ed8936;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #1a202c;
+    color: #f7fafc;
+}
+
+body.dark-mode #app-container {
+    background: #2d3748;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode h2 {
+    color: #f7fafc;
+}
+
+body.dark-mode #drop-area {
+    background: #2d3748;
+}
+
+body.dark-mode #job-description {
+    background: #4a5568;
+    color: #f7fafc;
+    border-color: #4a5568;
+}
+
+body.dark-mode #feedback-summary {
+    background: #276749;
+    color: #f7fafc;
+}
+
+body.dark-mode #analysis-results,
+body.dark-mode #suggestions {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode li {
+    background: #4a5568;
+}
+
+body.dark-mode #progress-bar-container {
+    background-color: #4a5568;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #app-container {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    #drop-area {
+        padding: 1.5rem;
+    }
+}
